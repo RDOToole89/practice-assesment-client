@@ -10,8 +10,7 @@ const compareName = (patientA, patientB) => {
 function PatientDB() {
   const [patients, setPatients] = useState([]);
   const [doctor, setDoctor] = useState(0);
-
-  console.log("Doctor ID:", doctor);
+  const [doctorNames, setDoctorNames] = useState([]);
 
   useEffect(() => {
     const fetchPatients = async () => {
@@ -20,13 +19,18 @@ function PatientDB() {
       );
       setPatients(response.data);
     };
+    const fetchDoctors = async () => {
+      const response = await axios.get(
+        "https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors"
+      );
+      setDoctorNames(response.data);
+    };
+
+    fetchDoctors();
     fetchPatients();
   }, [doctor]);
 
-  console.log("PATIENTS DATA:", patients);
-
   const sortedPatients = [...patients].sort(compareName);
-  console.log("SORTED PATIENTS", sortedPatients);
 
   const patientsByDocId = patients.filter((patient) => {
     return patient.doctorId === doctor;
@@ -51,10 +55,6 @@ function PatientDB() {
       changeSort = sortedPatients;
   }
 
-  console.log("CHANGE SORT", changeSort);
-
-  console.log("PATIENTSBYDOCID", patientsByDocId);
-
   return (
     <div className="Patients-DB">
       <h1>PatientDB Page</h1>
@@ -66,10 +66,10 @@ function PatientDB() {
           setDoctor(parseInt(e.target.value));
         }}
       >
-        <option value="">Select Doctor</option>
-        <option value="1">Dr. Coventry</option>
-        <option value="2">Dr. Adenet</option>
-        <option value="3">Dr. Tollady</option>
+        <option value="">All</option>
+        <option value="1">{doctorNames[0]?.doctor}</option>
+        <option value="2">{doctorNames[1]?.doctor}</option>
+        <option value="3">{doctorNames[2]?.doctor}</option>
       </select>
       <div className="Patient-show">
         {patients ? (

@@ -16,6 +16,7 @@ function App() {
         <Route exact path="/schedule" component={Schedule} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/patientdatabase" component={PatientDB} />
+        <Route exact path="/patientdatabase/:patientId?" component={PatientDB} />
       </Switch>
     </div>
   );

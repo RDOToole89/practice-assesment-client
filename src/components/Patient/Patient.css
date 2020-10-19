@@ -4,3 +4,7 @@
   width: 100%;
   margin-bottom: 2em;
 }
+
+.Patient-details-btn {
+  cursor: pointer;
+}

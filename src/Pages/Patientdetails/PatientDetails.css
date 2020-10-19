@@ -1,0 +1,10 @@
+.Patients-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Patient-details-card {
+  border: 1px black solid;
+  padding: 2em;
+}

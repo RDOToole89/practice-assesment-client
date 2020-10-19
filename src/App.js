@@ -6,6 +6,7 @@ import Home from "./Pages/Home/Home.js";
 import Schedule from "./Pages/Schedule/Schedule.js";
 import Signup from "./Pages/Signup/Signup.js";
 import PatientDB from "./Pages/PatientDB/PatientDB.js";
+import PatientsDetails from "./Pages/Patientdetails/PatientsDetails";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route exact path="/schedule" component={Schedule} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/patientdatabase" component={PatientDB} />
-        <Route exact path="/patientdatabase/:patientId?" component={PatientDB} />
+        <Route exact path="/patientdatabase/:patientId?" component={PatientsDetails} />
       </Switch>
     </div>
   );

@@ -1,0 +1,12 @@
+.Signup {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  align-items: center;
+}
+
+.Patient-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

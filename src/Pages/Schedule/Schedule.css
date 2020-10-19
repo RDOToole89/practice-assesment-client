@@ -1,0 +1,20 @@
+.Schedule {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Schedule-table {
+  border: 1px solid;
+}
+
+.Schedule-th {
+  padding: 0.4em;
+  border: 1px solid;
+}
+
+.Schedule-td {
+  padding: 1em;
+  border: 1px solid;
+}

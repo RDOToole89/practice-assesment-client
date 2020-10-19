@@ -1,0 +1,12 @@
+.Navbar {
+  color: #333;
+}
+
+.Navbar-list {
+  display: flex;
+  justify-content: center;
+}
+
+.Navbar-list-item {
+  margin-left: 1.4em;
+}

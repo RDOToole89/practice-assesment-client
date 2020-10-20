@@ -14,15 +14,11 @@ function PatientDB() {
 
   useEffect(() => {
     const fetchPatients = async () => {
-      const response = await axios.get(
-        "https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients"
-      );
+      const response = await axios.get("http://localhost:4000/patients");
       setPatients(response.data);
     };
     const fetchDoctors = async () => {
-      const response = await axios.get(
-        "https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors"
-      );
+      const response = await axios.get("http://localhost:4000/doctors");
       setDoctorNames(response.data);
     };
 

@@ -13,9 +13,7 @@ function PatientDetails(props) {
     console.log("useEffect fired in patient details");
 
     const fetchPatient = async () => {
-      const response = await axios.get(
-        "https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients"
-      );
+      const response = await axios.get("http://localhost:4000/patients");
       const foundPatient = response.data.filter((patient) => patient.id === params.patientId);
       setPatient(foundPatient[0]);
       console.log("FOUND PATIENT", foundPatient);
